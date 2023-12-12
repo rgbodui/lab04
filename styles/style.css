@@ -1,0 +1,209 @@
+/*GLOBAL*/
+:root {
+    --couleurJaune : #f8b800;
+}
+
+.container {
+    font-family: cursive;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+header img {
+    width: 300px;
+}
+
+header h3 i {
+    color: var(--couleurJaune);
+}
+
+/* CARROUSEL */
+.carrousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carrousel .images {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 600px;
+    transition: transform 0.7s ease-in-out;
+}
+
+.slider-item {
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.fleches {
+    position: absolute;
+    width: 100%;
+    padding-left: 10px;
+    top: 300px;
+    color: var(--couleurJaune);
+    cursor: pointer;
+}
+
+#droite {
+    float: right;
+    padding-right: 20px;
+}
+
+/* NAVIGATION */
+.btn-menu {
+    display: none;
+    position: absolute;
+    top: 180px;
+    right: 20px;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-evenly;
+    top: 200px;
+    left: -40px;
+    width: 100%;
+    list-style-type: none;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+nav ul li {
+    margin: 0 20px;
+    background-color: rgba(112, 112, 128, 0.8);
+    font-size: 16px;
+    min-width: 110px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    text-align: center;
+    box-shadow: 2px 2px 5px #444;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    background-color: rgb(96, 96, 96);
+}
+
+nav ul li:first-child {
+    background-color: var(--couleurJaune);
+}
+
+/* ARTICLES */
+.articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    font-size: small;
+}
+
+.articles h4, h5 {
+    font-size: 16px;
+}
+
+.un p {
+    padding-right: 10px;
+}
+
+.deux {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: rgb(128, 128, 128);
+    border-radius: 0 20px 20px 0;
+    height: 500px;
+}
+
+.bouton {
+    background-color: var(--couleurJaune);
+    color: white;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 30px 5px;
+    cursor: pointer;
+}
+
+/* TEMOIGNAGES */
+.temoignages h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 40px 0;
+}
+
+.temoignage-card {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    gap: 15px 20px;
+    padding: 20px;
+}
+
+.card {
+    grid-column: span 2;
+    box-shadow: 2px 2px 5px #444;
+    padding: 0 15px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.temoignages button {
+    width: 300px;
+    height: 40px;
+    margin: 40px auto;
+    display: block;    
+}
+
+/* FOOTER */
+footer {
+    height: 50px;
+    background-color: #444;
+    color: #CCC;
+    font-size: 12px;
+    text-align: center;
+    padding: 20px 100px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+    .btn-menu {display: block;}
+    nav ul {
+        opacity: 0;
+        flex-direction: column;
+        width: 250px;
+        padding: 0;
+        top: 225px;
+        left: calc(50% - 125px);
+    }
+    .un, .deux {grid-column: span 2;}
+}
+
+@media screen and (min-width: 901px) {
+    nav ul {opacity: 1 !important;}
+}
+
+@media screen and (max-width: 580px) {
+    header {justify-content: space-between;}
+    header h3 {font-size: 14px;}
+    header img {width: 220px;}
+    .card {grid-column: span 3;}
+}
